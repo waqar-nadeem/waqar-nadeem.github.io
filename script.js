@@ -1,4 +1,3 @@
-// Typing Animation Script
 const phrases = [
     "Bachelors of Science",
     "in Computer Science",
@@ -47,12 +46,10 @@ function type() {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Start Typing Animation
     if (typingElement) {
         setTimeout(type, 250);
     }
 
-    // Navigation Link Active State Logic
     const navLinks = document.querySelectorAll('#navbarNav .nav-link');
     const sections = document.querySelectorAll('section[id]');
     const navbar = document.querySelector('.navbar');
@@ -79,7 +76,6 @@ document.addEventListener('DOMContentLoaded', function() {
     changeNavActiveState();
     window.addEventListener('scroll', changeNavActiveState);
 
-    // Project Card GitHub Button Logic
     const projectCards = document.querySelectorAll('.project-card');
 
     projectCards.forEach(card => {
@@ -97,7 +93,6 @@ document.addEventListener('DOMContentLoaded', function() {
         card.addEventListener('click', function (event) {
             if (event.target.classList.contains('github-button')) return;
 
-            // Hide other buttons
             document.querySelectorAll('.project-card .github-button').forEach(btn => {
                 if (btn !== githubButton) {
                     btn.style.display = 'none';
@@ -105,7 +100,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             });
 
-            // Toggle this button
             if (repoUrl && repoUrl.trim() !== "") {
                 if (githubButton.style.display === 'none' || !githubButton.classList.contains('visible')) {
                     githubButton.href = repoUrl;
@@ -118,7 +112,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
 
-        // Button click handler
         if (repoUrl && repoUrl.trim() !== "" && card.contains(githubButton)) {
             githubButton.addEventListener('click', function (event) {
                 event.preventDefault();
@@ -131,7 +124,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Close button if clicking outside
     document.addEventListener('click', function(event) {
         if (!event.target.closest('.project-card')) {
             document.querySelectorAll('.project-card .github-button.visible').forEach(btn => {
@@ -140,4 +132,5 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         }
     });
+
 });
