@@ -55,23 +55,29 @@ document.addEventListener('DOMContentLoaded', function() {
     const navbar = document.querySelector('.navbar');
 
     function changeNavActiveState() {
-        let currentSectionId = 'hero';
-        const navbarHeight = navbar ? navbar.offsetHeight : 56;
+    let currentSectionId = 'hero';
+    const navbarHeight = navbar ? navbar.offsetHeight : 56;
+    const scrollPosition = window.scrollY + navbarHeight + 30;
+    const pageBottom = window.innerHeight + window.scrollY >= document.body.offsetHeight - 5;
 
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop - (navbarHeight + 20);
-            if (window.scrollY >= sectionTop) {
-                currentSectionId = section.getAttribute('id');
-            }
-        });
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        if (scrollPosition >= sectionTop) {
+            currentSectionId = section.getAttribute('id');
+        }
+    });
 
-        navLinks.forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href') === '#' + currentSectionId) {
-                link.classList.add('active');
-            }
-        });
+    if (pageBottom) {
+        currentSectionId = 'contact';
     }
+
+    navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === '#' + currentSectionId) {
+            link.classList.add('active');
+        }
+    });
+}
 
     changeNavActiveState();
     window.addEventListener('scroll', changeNavActiveState);
@@ -134,3 +140,4 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
 });
+
