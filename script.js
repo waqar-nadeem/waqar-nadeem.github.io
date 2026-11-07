@@ -1,5 +1,5 @@
 const phrases = [
-    "Bachelors of Science",
+    "Bachelor of Science",
     "in Computer Science",
     "(BSCS) Undergraduate"
 ];
