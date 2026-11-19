@@ -40,7 +40,7 @@ section {
     top: 0 !important;
     z-index: 1030 !important;
     box-shadow: 0 2px 4px rgba(0,0,0,.08);
-    background-color: #7600bc !important;
+    background-color: #1877F2 !important;
 }
 
 .navbar-brand {
@@ -79,7 +79,7 @@ section {
 }
 
 #hero {
-    background: linear-gradient(135deg, #e0e7ff 0%, #f3f4f6 100%);
+    background: #ffffff;
     min-height: 90vh;
 }
 
@@ -147,6 +147,10 @@ section {
     color: white;
 }
 
+#projects {
+    background-color: #ffffff !important;
+}
+
 .project-card {
     transition: all 0.3s ease;
     height: 100%;
@@ -172,7 +176,7 @@ section {
 }
 
 .card-body {
-    padding: 1.25rem;
+    padding: 1.5rem;
     flex-grow: 1;
 }
 
@@ -185,6 +189,9 @@ section {
     align-items: center;
     justify-content: center;
     margin-bottom: 0.5rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    line-height: 1.8;
 }
 
 .card-img-top {
@@ -209,7 +216,7 @@ section {
 }
 
 #contact {
-    background-color: #f8f9fa;
+    background-color: #ffffff;
 }
 
 .contact-icons {
@@ -231,5 +238,5 @@ section {
 }
 
 footer.bg-dark {
-    background-color: #7600bc !important;
+    background-color: #1877F2 !important;
 }
